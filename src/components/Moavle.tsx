@@ -44,6 +44,7 @@ const Moavle:React.FC = () => {
         setLoading(true); 
         try {
             const response = await axios.get("https://source.unsplash.com/random/600x400");
+            console.log(response)
             setImageUrl(response.request.responseURL);   
         }catch (error){
             console.error("Error al obtener la imagen:", error);

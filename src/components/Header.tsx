@@ -10,20 +10,17 @@ export default function App() {
       <nav>
         <ul>
              <li>
-                <Link to="/">Inicio</Link>
+                <Link to="/">Demo Moveable</Link>
              </li>
               <li>
                 <Link to="/about">Acerca de</Link>
              </li>
-              <li>
-                <Link to="/moavle">Demo Moavle</Link>
-             </li>
+
         </ul>
        </nav> 
       <Routes>
         <Route path="/about" element={<About />} />
-        <Route path="/moavle" element={<Moavle/>} />
-        <Route path="/"></Route>
+        <Route path="/" element={<Moavle/>} />
       </Routes>
     </Router>
   );
