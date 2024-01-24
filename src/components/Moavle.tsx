@@ -47,7 +47,7 @@ const Moavle:React.FC = () => {
             console.log(response)
             setImageUrl(response.request.responseURL);   
         }catch (error){
-            console.error("Error al obtener la imagen:", error);
+            console.error("Error: image was not fetched", error);
         }finally {
             setLoading(false); 
         }
@@ -56,9 +56,9 @@ const Moavle:React.FC = () => {
     return(
         <div>
             {loading ? (
-                <p>Cargando</p>
+                <p>Loading</p>
             ) : (
-                <button onClick={fetchImage}>Cargar Imagen</button>
+                <button onClick={fetchImage}>Random image</button>
             )}
             {imageUrl && !loading && (
                 <div
