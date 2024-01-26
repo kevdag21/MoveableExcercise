@@ -1,9 +1,11 @@
-import React, {useContext, useState} from "react";
-import Moavle from "./Moavle";
+import {useContext} from "react";
+import Moavle from "../molecules/Moavle"
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import About from "../pages/About";
-import "../styles/Header.css"
-import { ThemeContext } from "../contexts/ThemeContextHelper";
+import "../../styles/Header.css"
+import { ThemeContext } from "../../contexts/ThemeContextHelper";
+import { Products } from "./Products";
+import { products as initialProducts } from '../../mocks/products.json'
+
 
 export default function Header() {
   const theme = useContext(ThemeContext)
@@ -19,7 +21,7 @@ export default function Header() {
                   <Link to="/" className={'a-' + className}>Demo Moveable</Link>
               </li>
                 <li>
-                  <Link to="/about" className={'a-' + className}>About Moveable</Link>
+                  <Link to="/Products" className={'a-' + className}>Products</Link>
               </li>
               <input
                 type="checkbox"
@@ -32,7 +34,7 @@ export default function Header() {
           </ul>
         </nav> 
         <Routes>
-          <Route path="/about" element={<About />} />
+          <Route path="/products" element={<Products products={initialProducts} />} />
           <Route path="/" element={<Moavle/>} />
         </Routes>
       </Router> 
